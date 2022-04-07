@@ -11,12 +11,13 @@ parser.add_argument('path', type=str, help='path to show')
 args = parser.parse_args()
 
 
-def dirtreewalk(f, f_path):
+def dirtreewalk(f, path):
     global sub_files
-    fullpath = join(f_path, f)
+    fullpath = join(path, f)
     if os.path.isfile(fullpath):
         hash_file = hashlib.md5(open(fullpath, 'rb').read()).hexdigest()
-        file_info = [f, fullpath, hash_file]
+        rel_pass = os.path.relpath(fullpath)
+        file_info = [f, rel_pass, hash_file]
         printBeautiful(file_info)
         return
     elif os.path.isdir(fullpath):
