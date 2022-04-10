@@ -20,7 +20,8 @@ def dirtreewalk(f, path):
         file_info = [f, rel_pass, hash_file]
         printBeautiful(file_info)
         return
-    elif os.path.isdir(fullpath):
+#   elif os.path.isdir(fullpath):
+    else:
         file_info = [f, '<dir>', '']
         printBeautiful(file_info)
         sub_files = os.listdir(fullpath)
