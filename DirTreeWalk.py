@@ -3,6 +3,8 @@ import hashlib
 import os
 from os.path import join
 
+__author__      = "Aslan Pourmoslemi"
+
 # Create the parser
 parser = argparse.ArgumentParser()
 # Add the arguments
